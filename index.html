@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Pasar UMKM — katalog sederhana untuk menemukan usaha mikro, kecil, dan menengah di Indonesia." />
+  <title>Pasar UMKM — Katalog Usaha Lokal</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏪</text></svg>" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#">
+        <span class="brand-mark" aria-hidden="true">🏪</span>
+        <span>Pasar<strong>UMKM</strong></span>
+      </a>
+      <nav class="header-nav" aria-label="Navigasi utama">
+        <a href="#katalog">Katalog</a>
+        <a href="#tentang">Tentang</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <p class="hero-badge">🇮🇩 Bangga Buatan Lokal</p>
+        <h1>Temukan UMKM terbaik di sekitarmu</h1>
+        <p class="hero-sub">
+          Jelajahi produk makanan, minuman, fashion, kerajinan, dan jasa dari
+          pelaku usaha mikro, kecil, dan menengah di seluruh Indonesia.
+        </p>
+
+        <form class="search" id="searchForm" role="search" onsubmit="return false">
+          <span class="search-icon" aria-hidden="true">🔍</span>
+          <input
+            id="searchInput"
+            type="search"
+            placeholder="Cari usaha, produk, atau kota…"
+            aria-label="Cari UMKM"
+            autocomplete="off"
+          />
+          <button type="button" id="clearSearch" class="clear-btn" hidden aria-label="Hapus pencarian">✕</button>
+        </form>
+
+        <div class="hero-stats">
+          <div><strong id="statCount">12</strong><span>UMKM terdaftar</span></div>
+          <div><strong id="statCategories">6</strong><span>Kategori usaha</span></div>
+          <div><strong>100%</strong><span>Produk lokal</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="catalog container" id="katalog">
+      <div class="catalog-head">
+        <div>
+          <h2>Katalog UMKM</h2>
+          <p id="resultInfo" aria-live="polite">Menampilkan 12 usaha</p>
+        </div>
+        <select id="sortSelect" aria-label="Urutkan daftar UMKM">
+          <option value="default">Urutan default</option>
+          <option value="rating">Rating tertinggi</option>
+          <option value="name">Nama A–Z</option>
+        </select>
+      </div>
+
+      <div class="chips" id="categoryChips" role="group" aria-label="Filter kategori"></div>
+
+      <div class="grid" id="umkmGrid" aria-label="Daftar UMKM"></div>
+
+      <div class="empty" id="emptyState" hidden>
+        <span aria-hidden="true">🔎</span>
+        <h3>Tidak ada hasil</h3>
+        <p>Coba kata kunci lain atau pilih kategori “Semua”.</p>
+        <button type="button" id="resetFilters" class="btn-primary">Reset filter</button>
+      </div>
+    </section>
+
+    <section class="about" id="tentang">
+      <div class="container">
+        <div class="about-card">
+          <h2>Tentang Pasar UMKM</h2>
+          <p>
+            Pasar UMKM adalah prototype katalog sederhana yang membantu pelaku
+            usaha mikro, kecil, dan menengah memperkenalkan produknya secara online.
+            Pengunjung dapat mencari usaha, melihat detail produk, lalu menghubungi
+            pemilik usaha langsung lewat WhatsApp.
+          </p>
+          <div class="about-points">
+            <div>
+              <strong>🛍️ Langsung dari pelaku usaha</strong>
+              <span>Tanpa perantara, harga lebih adil untuk penjual dan pembeli.</span>
+            </div>
+            <div>
+              <strong>⭐ Produk lokal berkualitas</strong>
+              <span>Dikurasi dari berbagai kota dengan rating dan ulasan pembeli.</span>
+            </div>
+            <div>
+              <strong>💬 Mudah dihubungi</strong>
+              <span>Hubungi pemilik usaha langsung melalui WhatsApp.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© 2026 Pasar UMKM · Prototype katalog UMKM</p>
+      <p>Dibuat dengan ❤️ untuk UMKM Indonesia</p>
+    </div>
+  </footer>
+
+  <!-- Modal detail UMKM -->
+  <div class="modal" id="modal" hidden>
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button type="button" class="modal-close" data-close aria-label="Tutup detail">✕</button>
+      <div id="modalContent"></div>
+    </div>
+  </div>
+
+  <noscript>
+    <p style="padding: 20px; text-align: center;">
+      Aktifkan JavaScript untuk melihat katalog UMKM.
+    </p>
+  </noscript>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
