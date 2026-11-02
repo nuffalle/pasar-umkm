@@ -1,5 +1,7 @@
 # Pasar UMKM — Prototype Katalog UMKM
 
+**🌐 Live demo:** https://nuffalle.github.io/pasar-umkm/
+
 Prototype website katalog sederhana untuk membantu pelaku **Usaha Mikro, Kecil, dan Menengah (UMKM)** memperkenalkan produknya secara online.
 
 Dibuat dengan **HTML + CSS + JavaScript murni** — tanpa framework, tanpa instalasi, tanpa database.
@@ -76,6 +78,23 @@ Warna utama ada di bagian atas `css/style.css`:
 ```
 
 Ganti nilai tersebut untuk menyesuaikan warna dengan identitas usaha/daerah.
+
+## Deploy
+
+Situs ini di-host gratis di **GitHub Pages**:
+
+- Repository: https://github.com/nuffalle/pasar-umkm
+- URL: https://nuffalle.github.io/pasar-umkm/
+
+Setiap kali ada perubahan, jalankan:
+
+```bash
+git add .
+git commit -m "Perbarui konten"
+git push
+```
+
+GitHub Pages akan otomatis memperbarui situs dalam ±1 menit.
 
 ## Catatan
 
